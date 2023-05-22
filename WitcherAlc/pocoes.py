@@ -34,6 +34,6 @@ class Frasco:
             for ingrediente in self.ingredientes:
                 print(ingrediente.nome)
         else:
-            print("Nenhum ingrediente no frasco.")
+            print("Nenhum ingrediente possível no frasco.")
         print()
 
