@@ -1,44 +1,41 @@
-**!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !!** 
+# Grafos2_WesterosNav
 
-Temas:
- - Grafos1
- - Grafos2
- - PD
- - D&C
- - Greed
- - Final 
- 
- **!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**
- 
- (Apague essa seção)
-
-# NomedoProjeto
-
-**Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Número da Lista**:25<br>
+**Conteúdo da Disciplina**: Greed algorithm<br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 20/0028472  |  Vinícius Assumpção de Araújo T01 |
+| 20/0028367  |  Victor Hugo Oliveira Leão T02 |
 
-## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+## Sobre
+
+Esse é um projeto que toma como base os algoritimos ambiciosos  knapsack e interval scheduling para um divertido exercício de gestão no universo de the witcher. Imagine que geralt, o bruxo, está se preparando para uma difícil batalha contra uma criatura desconhecida em seu contrato de monstros atual. Para se garantir, ele precisa  preparar as melhores pocoes que ele conseguir, com os ingredientes que ele tem no limitado tempo que lhe resta, pense nas possibilidades junto a ele e ajude o lobo branco a perseverar mais uma vez!
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+
+
+
+## Vídeo
+
+- [youtube]()
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+**Linguagem**: Python<br>
+**Framework**: e<br>
+
+
+
+O programa foi desenvolvido e testado no sistema operacional Windows.
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+
+
 
 ## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+
+
 
 
 
