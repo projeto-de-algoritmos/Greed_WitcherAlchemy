@@ -1,32 +1,21 @@
 from pocoes import *
 
-def empacotar_ingredientes(ingredientes, capacidade_frasco):
-    n = len(ingredientes)
 
-    dp = [[0] * (capacidade_frasco + 1) for _ in range(n + 1)]
+def empacotar_ingredientes(ingredientes, capacidades):
+    frascos = []
 
-    for i in range(1, n + 1):
-        for j in range(1, capacidade_frasco + 1):
-            ingrediente = ingredientes[i - 1]
+    for capacidade_frasco in capacidades:
+        frasco = Frasco(capacidade_frasco)
 
-            if ingrediente.tamanho <= j:
-                dp[i][j] = max(ingrediente.tamanho + dp[i - 1][j - ingrediente.tamanho], dp[i - 1][j])
-            else:
-                dp[i][j] = dp[i - 1][j]
+        for ingrediente in ingredientes:
+            if not ingrediente.usado:
+                frasco.adicionar_ingrediente(ingrediente)
+                if frasco.espaco_livre == 0:
+                    break
 
-    frasco = Frasco(capacidade_frasco)
+        frascos.append(frasco)
 
-    i = n
-    j = capacidade_frasco
-
-    while i > 0 and j > 0:
-        if dp[i][j] != dp[i - 1][j]:
-            ingrediente = ingredientes[i - 1]
-            frasco.adicionar_ingrediente(ingrediente)
-            j -= ingrediente.tamanho
-        i -= 1
-
-    return frasco
+    return frascos
 
 
 # Criação dos ingredientes específicos de The Witcher
@@ -53,13 +42,10 @@ for i in range(numero_frascos):
     capacidades.append(capacidade_frasco)
 
 # Empacotamento dos ingredientes nos frascos
-frascos = []
-for capacidade_frasco in capacidades:
-    frasco = empacotar_ingredientes(ingredientes, capacidade_frasco)
-    frascos.append(frasco)
+frascos = empacotar_ingredientes(ingredientes, capacidades)
 
 # Mostrar os ingredientes em cada frasco
 for i, frasco in enumerate(frascos):
     print(f"Frasco {i + 1}:")
     frasco.mostrar_ingredientes()
-    print()
+
