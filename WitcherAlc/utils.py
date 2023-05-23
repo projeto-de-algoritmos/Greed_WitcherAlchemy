@@ -1,4 +1,4 @@
-from Greed_WitcherAlchemy.WitcherAlc.models import *
+from models import *
 
 def empacotar_ingredientes(ingredientes, capacidades):
     """

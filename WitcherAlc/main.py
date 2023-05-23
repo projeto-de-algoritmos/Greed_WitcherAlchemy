@@ -1,6 +1,6 @@
-from Greed_WitcherAlchemy.WitcherAlc.models import *
-from Greed_WitcherAlchemy.WitcherAlc.utils import *
-from Greed_WitcherAlchemy.WitcherAlc.data import *
+from models import *
+from utils import *
+from data import *
 
 if __name__ == "__main__":
     # Solicita ao jogador o número de frascos disponíveis

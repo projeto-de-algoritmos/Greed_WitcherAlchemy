@@ -1,4 +1,4 @@
-from Greed_WitcherAlchemy.WitcherAlc.models import *
+from models import *
 
 # Criação dos ingredientes específicos de The Witcher
 ingredientes = [
