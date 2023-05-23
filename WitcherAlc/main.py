@@ -8,15 +8,18 @@ if __name__ == "__main__":
 
     # Solicita ao jogador a capacidade de cada frasco
     capacidades = []
-
     for i in range(numero_frascos):
-        capacidade_frasco = int(input(f"Digite a capacidade do frasco {i+1} em unidades: "))
+        capacidade_frasco = float(input(f"Digite a capacidade do frasco {i+1} em unidades: "))
         capacidades.append(capacidade_frasco)
 
-    # Empacotamento dos ingredientes nos frascos (Knapsack)
+    # Empacotamento dos ingredientes nos frascos
     frascos = empacotar_ingredientes(ingredientes, capacidades)
 
-    # Mostrar os ingredientes em cada frasco
-    for i, frasco in enumerate(frascos):
+    # Ordenar os frascos por tempo total de preparação
+    frascos_ordenados = ordernar_frascos_por_tempo(frascos)
+
+    # Mostrar os ingredientes em cada frasco e a ordem de produção
+    print("Ordem de produção dos frascos:")
+    for i, frasco in enumerate(frascos_ordenados):
         print(f"Frasco {i + 1}:")
         frasco.mostrar_ingredientes()
