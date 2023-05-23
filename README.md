@@ -1,4 +1,4 @@
-# Grafos2_WesterosNav
+# Greed_WitcherAlchemy
 
 **Número da Lista**:25<br>
 **Conteúdo da Disciplina**: Greed algorithm<br>
@@ -11,7 +11,7 @@
 
 ## Sobre
 
-Esse é um projeto que toma como base os algoritimos ambiciosos  knapsack e interval scheduling para um divertido exercício de gestão no universo de the witcher. Imagine que geralt, o bruxo, está se preparando para uma difícil batalha contra uma criatura desconhecida em seu contrato de monstros atual. Para se garantir, ele precisa  preparar as melhores pocoes que ele conseguir, com os ingredientes que ele tem no limitado tempo que lhe resta, pense nas possibilidades junto a ele e ajude o lobo branco a perseverar mais uma vez!
+Esse é um projeto que toma como base os algoritimos ambiciosos knapsack e interval scheduling para um divertido exercício de gestão no universo de the witcher. Imagine que geralt, o bruxo, está se preparando para uma difícil batalha contra uma criatura desconhecida em seu contrato de monstros atual. Para se garantir, ele precisa  preparar as melhores pocoes que ele conseguir, com os ingredientes que ele tem no limitado tempo que lhe resta, pense nas possibilidades junto a ele e ajude o lobo branco a perseverar mais uma vez!
 
 ## Screenshots
 
