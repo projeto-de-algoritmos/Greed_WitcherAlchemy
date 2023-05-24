@@ -3,23 +3,125 @@
 
 <head>
     <title>Resultado do Knapsack</title>
+    <style>
+        @font-face {
+            font-family: 'thewitcher';
+            src: url('static/thewitcher.ttf') format('truetype');
+            /* adicione outros formatos de fonte aqui, se necessário */
+        }
+
+        body {
+            font-family: 'thewitcher', sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+        }
+        
+        h1, h2, p, ul {
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            margin-top: 20px;
+        }
+        
+        ul {
+            margin-top: 10px;
+            list-style-type: none;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        .back-button {
+            margin-top: 20px;
+        }
+        
+        .back-button a {
+            background-color: red; /* Cor de fundo vermelha do botão */
+            border: none; /* Remove a borda */
+            color: white; /* Cor do texto */
+            padding: 10px 20px; /* Espaçamento interno */
+            text-align: center; /* Alinhamento do texto */
+            text-decoration: none; /* Remove a decoração de link */
+            display: inline-block; /* Permite ajustar a largura do botão */
+            font-size: 16px; /* Tamanho da fonte */
+            cursor: pointer; /* Cursor ao passar o mouse */
+            font-family: 'thewitcher'; /* Usa a mesma fonte do texto */
+            border-radius: 20px; /* Adiciona arredondamento dos cantos */
+        }
+        
+        .back-button a:hover {
+            background-color: #800000; /* Cor de fundo mais escura ao passar o mouse */
+        }
+        
+        .back-button a:active {
+            background-color: #400000; /* Cor de fundo ainda mais escura ao clicar */
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Resultado do Knapsack</h1>
+    <video id="video-background" autoplay loop muted>
+        <source src="{{ url_for('static', filename='witcherfundo.mkv') }}" type="video/mp4">
+        <!-- Adicione outros formatos de vídeo aqui, se necessário -->
+    </video>
 
-    {% for frasco in frascos %}
-    <h2>Frasco (Capacidade: {{ frasco.capacidade }} - Espaço Livre: {{ frasco.espaco_livre }})</h2>
-    {% if frasco.ingredientes %}
-    <ul>
-        {% for ingrediente in frasco.ingredientes %}
-        <li>{{ ingrediente.nome }} - Tamanho: {{ ingrediente.tamanho }} - {{ ingrediente.propriedades }}</li>
+    <audio id="background-music" src="{{ url_for('static', filename='music.mp3') }}" autoplay loop></audio>
+
+    <div class="content">
+        <h1>Resultado do Knapsack</h1>
+
+        {% for frasco in frascos %}
+        <h2>Frasco (Capacidade: {{ frasco.capacidade }} - Espaço Livre: {{ frasco.espaco_livre }})</h2>
+        {% if frasco.ingredientes %}
+        <ul>
+            {% for ingrediente in frasco.ingredientes %}
+            <li>{{ ingrediente.nome }} - Tamanho: {{ ingrediente.tamanho }} - {{ ingrediente.propriedades }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>Nenhum ingrediente alocado neste frasco.</p>
+        {% endif %}
         {% endfor %}
-    </ul>
-    {% else %}
-    <p>Nenhum ingrediente alocado neste frasco.</p>
-    {% endif %}
-    {% endfor %}
+        
+        <div class="back-button">
+            <a href="../index.html">Voltar</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('background-music');
+            var video = document.getElementById('video-background');
+            if (audio.paused) {
+                audio.play();
+            }
+            if (video.paused) {
+                video.play();
+            }
+        });
+
+        
+    </script>
 </body>
 
 </html>
