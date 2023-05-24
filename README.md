@@ -23,9 +23,13 @@ Esse é um projeto que toma como base os algoritimos ambiciosos knapsack e inter
 
 ## Instalação 
 **Linguagem**: Python<br>
-**Framework**: e<br>
+**Framework**: <br>
 
+Para rodar o projeto, é necessário ter a linguagem Python instalada e instalar as dependências por meio do comando: ```pip install -r requirements.txt```.
 
+Assim, para executar o programa, rode o comando: ```python app.py``` na pasta WitcherAlc. Com isso, a aplicação Web está sendo executada na porta 5000 (acesse digitando ```localhost:5000``` no navegador).
+
+O programa foi desenvolvido e testado no sistema operacional Windows.
 
 O programa foi desenvolvido e testado no sistema operacional Windows.
 

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Resultado do Knapsack</title>
+</head>
+
+<body>
+    <h1>Resultado do Knapsack</h1>
+
+    {% for frasco in frascos %}
+    <h2>Frasco (Capacidade: {{ frasco.capacidade }} - Espaço Livre: {{ frasco.espaco_livre }})</h2>
+    {% if frasco.ingredientes %}
+    <ul>
+        {% for ingrediente in frasco.ingredientes %}
+        <li>{{ ingrediente.nome }} - Tamanho: {{ ingrediente.tamanho }} - {{ ingrediente.propriedades }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Nenhum ingrediente alocado neste frasco.</p>
+    {% endif %}
+    {% endfor %}
+</body>
+
+</html>

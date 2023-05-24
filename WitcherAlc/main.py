@@ -2,6 +2,8 @@ from models import *
 from utils import *
 from data import *
 
+from flask import Flask, render_template, request
+
 if __name__ == "__main__":
     # Solicita ao jogador o número de frascos disponíveis
     numero_frascos = int(input("Digite o número de frascos disponíveis: "))
