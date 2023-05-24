@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'thewitcher';
+    src: url('thewitcher.ttf') format('truetype');
+    /* adicione outros formatos de fonte aqui, se necessário */
+}
+
+body {
+    font-family: 'thewitcher', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="number"] {
+    width: 200px;
+}
+
+button {
+    margin-top: 10px;
+    background-color: red;
+    /* Cor de fundo vermelha do botão */
+    border: none;
+    /* Remove a borda */
+    color: white;
+    /* Cor do texto */
+    padding: 10px 20px;
+    /* Espaçamento interno */
+    text-align: center;
+    /* Alinhamento do texto */
+    text-decoration: none;
+    /* Remove a decoração de link */
+    display: inline-block;
+    /* Permite ajustar a largura do botão */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    cursor: pointer;
+    /* Cursor ao passar o mouse */
+    font-family: 'thewitcher';
+    /* Usa a mesma fonte do texto */
+    border-radius: 20px;
+    /* Adiciona arredondamento dos cantos */
+}
+
+button:hover {
+    background-color: #800000;
+    /* Cor de fundo mais escura ao passar o mouse */
+}
+
+button:active {
+    background-color: #400000;
+    /* Cor de fundo ainda mais escura ao clicar */
+}
+
+.back-button {
+    margin-top: 20px;
+}
+
+.back-button a {
+    background-color: red;
+    /* Cor de fundo vermelha do botão */
+    border: none;
+    /* Remove a borda */
+    color: white;
+    /* Cor do texto */
+    padding: 10px 20px;
+    /* Espaçamento interno */
+    text-align: center;
+    /* Alinhamento do texto */
+    text-decoration: none;
+    /* Remove a decoração de link */
+    display: inline-block;
+    /* Permite ajustar a largura do botão */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    cursor: pointer;
+    /* Cursor ao passar o mouse */
+    font-family: 'thewitcher';
+    /* Usa a mesma fonte do texto */
+    border-radius: 20px;
+    /* Adiciona arredondamento dos cantos */
+}
+
+.back-button a:hover {
+    background-color: #800000;
+    /* Cor de fundo mais escura ao passar o mouse */
+}
+
+.back-button a:active {
+    background-color: #400000;
+    /* Cor de fundo ainda mais escura ao clicar */
+}

@@ -1,8 +1,9 @@
 class Ingrediente:
-    def __init__(self, nome, tamanho, propriedades):
+    def __init__(self, nome, tamanho, valor, propriedades):
         self.nome = nome
         self.tamanho = float(tamanho)
         self.propriedades = propriedades
+        self.valor = valor
         self.usado = False
 
     def usar(self):
@@ -11,7 +12,6 @@ class Ingrediente:
         else:
             print(f"O ingrediente {self.nome} já foi usado e não pode ser adicionado a mais de um frasco.")
 
-
 class Frasco:
     def __init__(self, capacidade):
         self.capacidade = capacidade
@@ -19,14 +19,18 @@ class Frasco:
         self.ingredientes = []
 
     def adicionar_ingrediente(self, ingrediente):
-        if ingrediente.usado:
-            print(f"O ingrediente {ingrediente.nome} já foi usado e não pode ser adicionado ao frasco.")
-        elif ingrediente.tamanho <= self.espaco_livre:
+        if ingrediente.tamanho <= self.espaco_livre:
             self.ingredientes.append(ingrediente)
             self.espaco_livre -= ingrediente.tamanho
             ingrediente.usar()
-        #else:
-            #print(f"O frasco não tem espaço suficiente para adicionar o ingrediente {ingrediente.nome}.")
+        else:
+            # Calcular a fração do ingrediente que será adicionada
+            fracao = self.espaco_livre / ingrediente.tamanho
+            ingrediente_fracionado = Ingrediente(ingrediente.nome, ingrediente.tamanho * fracao, ingrediente.valor * fracao, ingrediente.propriedades)
+            self.ingredientes.append(ingrediente_fracionado)
+            self.espaco_livre = 0
+            ingrediente.tamanho = ingrediente.tamanho - ingrediente.tamanho * fracao
+
 
     def mostrar_ingredientes(self):
         print(f"Ingredientes no frasco (capacidade: {self.capacidade} - espaço livre: {self.espaco_livre}):")
@@ -37,3 +41,9 @@ class Frasco:
             print("Nenhum ingrediente no frasco.")
         print()
 
+class Contrato:
+    def __init__(self, nome, descricao, inicio, termino):
+        self.nome = nome
+        self.descricao = descricao
+        self.inicio = inicio
+        self.termino = termino

@@ -1,37 +1,33 @@
 from models import *
+from datetime import datetime
 
-def empacotar_ingredientes(ingredientes, capacidades):
+def knapsack_(ingredientes, capacidades):
     frascos = []
 
     for capacidade_frasco in capacidades:
         frasco = Frasco(capacidade_frasco)
 
-        for ingrediente in ingredientes:
+        ingredientes_ordenados = sorted(ingredientes, key=lambda x: x.valor / x.tamanho, reverse=True)
+
+        for ingrediente in ingredientes_ordenados:
             if not ingrediente.usado:
                 frasco.adicionar_ingrediente(ingrediente)
-                if frasco.espaco_livre == 0:
-                    break
 
         frascos.append(frasco)
 
     return frascos
 
+def interval_scheduling(atividades):
+    # Ordena as atividades pelo tempo de término em ordem crescente
+    atividades.sort(key=lambda x: x.termino)
 
-def ordernar_frascos_por_tempo(frascos):
-    frascos_ordenados = []
+    atividades_selecionadas = []
+    ultimo_termino = datetime.min
 
-    # Criar uma lista de tuplas (inicio, fim) representando os intervalos de tempo de cada frasco
-    intervalos = [(sum(ingrediente.tamanho for ingrediente in frasco.ingredientes), frasco) for frasco in frascos]
+    for atividade in atividades:
+        # Verifica se a atividade é compatível com as atividades já selecionadas
+        if atividade.inicio >= ultimo_termino:
+            atividades_selecionadas.append(atividade)
+            ultimo_termino = atividade.termino
 
-    # Ordenar os intervalos por fim crescente
-    intervalos_ordenados = sorted(intervalos, key=lambda x: x[0])
-
-    # Percorrer os intervalos ordenados e selecionar os frascos compatíveis
-    fim_anterior = 0
-    for intervalo in intervalos_ordenados:
-        inicio, frasco = intervalo
-        if inicio >= fim_anterior:
-            frascos_ordenados.append(frasco)
-            fim_anterior = inicio
-
-    return frascos_ordenados
+    return atividades_selecionadas

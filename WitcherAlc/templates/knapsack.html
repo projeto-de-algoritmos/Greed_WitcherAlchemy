@@ -4,86 +4,16 @@
 <head>
     <title>Sistema de Knapsack</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        @font-face {
-            font-family: 'thewitcher';
-            src: url('static/thewitcher.ttf') format('truetype');
-            /* adicione outros formatos de fonte aqui, se necessário */
-        }
-
-        body {
-            font-family: 'thewitcher', sans-serif;
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
-
-        #video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-        
-        .content {
-            position: relative;
-            z-index: 1;
-            padding: 20px;
-        }
-        
-        h1 {
-            margin-top: 0;
-        }
-        
-        form {
-            margin-top: 20px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        
-        input[type="number"] {
-            width: 200px;
-        }
-        
-        button {
-            margin-top: 10px;
-            background-color: red; /* Cor de fundo vermelha do botão */
-            border: none; /* Remove a borda */
-            color: white; /* Cor do texto */
-            padding: 10px 20px; /* Espaçamento interno */
-            text-align: center; /* Alinhamento do texto */
-            text-decoration: none; /* Remove a decoração de link */
-            display: inline-block; /* Permite ajustar a largura do botão */
-            font-size: 16px; /* Tamanho da fonte */
-            cursor: pointer; /* Cursor ao passar o mouse */
-            font-family: 'thewitcher'; /* Usa a mesma fonte do texto */
-            border-radius: 20px; /* Adiciona arredondamento dos cantos */
-        }
-        
-        button:hover {
-            background-color: #800000; /* Cor de fundo mais escura ao passar o mouse */
-        }
-        
-        button:active {
-            background-color: #400000; /* Cor de fundo ainda mais escura ao clicar */
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 
 <body>
     <video id="video-background" autoplay loop muted>
         <source src="{{ url_for('static', filename='witcherfundo.mkv') }}" type="video/mp4">
-        <!-- Adicione outros formatos de vídeo aqui, se necessário -->
     </video>
 
     <audio id="background-music" src="{{ url_for('static', filename='music.mp3') }}" autoplay loop></audio>
-    
+
     <div class="content">
         <h1>Sistema de Knapsack</h1>
 
@@ -98,10 +28,13 @@
 
             <button type="submit">Executar</button>
         </form>
+        <div class="back-button">
+            <a href="/">Voltar</a>
+        </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             var audio = document.getElementById('background-music');
             var video = document.getElementById('video-background');
             if (audio.paused) {
@@ -130,7 +63,3 @@
 </body>
 
 </html>
-
-
-
-

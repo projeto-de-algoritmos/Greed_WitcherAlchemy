@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Resultado Interval Scheduling</title>
+</head>
+
+<body>
+    <h1>Contratos Selecionados</h1>
+    <ul>
+        {% for contrato in contratos_selecionados %}
+        <li>
+            <strong>Nome:</strong> {{ contrato.nome }}<br>
+            <strong>Descrição:</strong> {{ contrato.descricao }}<br>
+            <strong>Início:</strong> {{ contrato.inicio.strftime("%Y-%m-%d %H:%M") }}<br>
+            <strong>Término:</strong> {{ contrato.termino.strftime("%Y-%m-%d %H:%M") }}<br>
+            <strong>Duração:</strong> {{ contrato.duracao }} horas
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="back-button">
+        <a href="/">Voltar</a>
+    </div>
+
+</body>
+
+</html>
