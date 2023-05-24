@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sistema de Knapsack</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#num_frascos').on('input', function () {
+                var numFrascos = parseInt($(this).val());
+                if (!isNaN(numFrascos)) {
+                    $('#frascos_fields').empty();
+                    for (var i = 1; i <= numFrascos; i++) {
+                        var inputHtml = '<div><label for="frasco_capacidade_' + i + '">Capacidade Frasco ' + i + ':</label>';
+                        inputHtml += '<input type="number" id="frasco_capacidade_' + i + '" name="frasco_capacidade_' + i + '" required></div>';
+                        $('#frascos_fields').append(inputHtml);
+                    }
+                    $('#frascos_range').val(numFrascos);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Sistema de Knapsack</h1>
+
+    <form action="/knapsack" method="post">
+        <h2>Frascos</h2>
+        <label for="num_frascos">Número de Frascos:</label>
+        <input type="number" id="num_frascos" name="num_frascos" required>
+
+        <div id="frascos_fields"></div>
+
+        <input type="hidden" id="frascos_range" name="frascos_range" value="0">
+
+        <button type="submit">Executar</button>
+    </form>
+</body>
+
+</html>
