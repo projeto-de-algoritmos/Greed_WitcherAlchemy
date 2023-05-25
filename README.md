@@ -19,7 +19,15 @@ O projeto desenvolvido trata-se de uma aplicação Web inspirada no mundo da sé
 
 ## Screenshots
 
+![Tela inicial](./images/print-1.png)
 
+![Tela Knapsack](./images/print-2.png)
+
+![Tela Knapsack - Resultado](./images/print-3.png)
+
+![Tela Contratos](./images/print-4.png)
+
+![Tela Contratos - Resultado](./images/print-5.png)
 
 ## Vídeo
 
@@ -37,12 +45,18 @@ O programa foi desenvolvido e testado no sistema operacional Linux (WSL).
 
 ## Uso 
 
+O uso é bem simples, ao abrir no navegador o projeto, selecione entre ```Knapsack``` ou ```Contratos``` para ir ao módulo desejado (print 1).
 
+Caso deseje ```Knapsack```, veja os ingredientes ao lado (tamanho e valor já estão preenchidos) e, assim, selecione a quantidade de frascos e preencha a quantidade de cada um. Ao enviar, o resultado do Knapsack será atualizado na tela.
+
+Caso deseje ```Contratos```, selecione a quantidade de contratos (missões) e preencha o nome, descrição e tempo de início e término de cada um. Ao enviar, aparecerá o resultado Interval Scheduling, apresentando quais os contratos podem ser feitos a fim de maximizar a quantidade de contratos feitos.
 
 ## Outros 
 
+Mostre o programa em execução para seus amigos e conhecidos que gostam de The Witcher, aposto que eles gostarão!
 
+Algumas melhorias podem ser feitas, sinta-se a vontade para fazê-las e nos avisar:
 
-
-
-
+- Usuário cadastrar os ingredientes e seus tamanhos e pesos.
+- Melhorar a apresentação do Front-End.
+- Verificações dos campos preenchidos pelo usuário.
