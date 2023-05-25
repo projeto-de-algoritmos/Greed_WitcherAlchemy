@@ -3,26 +3,128 @@
 
 <head>
     <title>Resultado Interval Scheduling</title>
+    <style>
+        @font-face {
+            font-family: 'thewitcher';
+            src: url('static/thewitcher.ttf') format('truetype');
+            /* adicione outros formatos de fonte aqui, se necessário */
+        }
+
+        body {
+            font-family: 'thewitcher';
+            color: white;
+            /* Remova a propriedade background-image */
+            background-size: cover;
+            /* adicione estilos adicionais aqui, se necessário */
+        }
+
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        button {
+            background-color: red; /* Cor de fundo vermelha do botão */
+            border: none; /* Remove a borda */
+            color: white; /* Cor do texto */
+            padding: 10px 20px; /* Espaçamento interno */
+            text-align: center; /* Alinhamento do texto */
+            text-decoration: none; /* Remove a decoração de link */
+            display: inline-block; /* Permite ajustar a largura do botão */
+            font-size: 16px; /* Tamanho da fonte */
+            margin-top: 10px; /* Espaçamento superior */
+            cursor: pointer; /* Cursor ao passar o mouse */
+            font-family: 'thewitcher'; /* Usa a mesma fonte do texto */
+            border-radius: 20px; /* Remove o arredondamento dos cantos */
+        }
+
+        button:hover {
+            background-color: #800000; /* Cor de fundo mais escura ao passar o mouse */
+        }
+
+        button:active {
+            background-color: #400000; /* Cor de fundo ainda mais escura ao clicar */
+        }
+
+        .back-button {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .back-button a {
+            background-color: red; /* Cor de fundo vermelha do botão */
+            border: none; /* Remove a borda */
+            color: white; /* Cor do texto */
+            padding: 10px 20px; /* Espaçamento interno */
+            text-decoration: none; /* Remove a decoração de link */
+            font-size: 16px; /* Tamanho da fonte */
+            cursor: pointer; /* Cursor ao passar o mouse */
+            font-family: 'thewitcher'; /* Usa a mesma fonte do texto */
+            border-radius: 20px; /* Remove o arredondamento dos cantos */
+        }
+
+        .back-button a:hover {
+            background-color: #800000; /* Cor de fundo mais escura ao passar o mouse */
+        }
+
+        .back-button a:active {
+            background-color: #400000; /* Cor de fundo ainda mais escura ao clicar */
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Contratos Selecionados</h1>
-    <ul>
-        {% for contrato in contratos_selecionados %}
-        <li>
-            <strong>Nome:</strong> {{ contrato.nome }}<br>
-            <strong>Descrição:</strong> {{ contrato.descricao }}<br>
-            <strong>Início:</strong> {{ contrato.inicio.strftime("%Y-%m-%d %H:%M") }}<br>
-            <strong>Término:</strong> {{ contrato.termino.strftime("%Y-%m-%d %H:%M") }}<br>
-            <strong>Duração:</strong> {{ contrato.duracao }} horas
-        </li>
-        {% endfor %}
-    </ul>
+    <video id="video-background" autoplay loop muted>
+        <source src="{{ url_for('static', filename='witcherfundo.mkv') }}" type="video/mp4">
+        <!-- Adicione outros formatos de vídeo aqui, se necessário -->
+    </video>
 
-    <div class="back-button">
-        <a href="/">Voltar</a>
+    <audio id="background-music" src="{{ url_for('static', filename='music.mp3') }}" autoplay loop></audio>
+
+    <div class="content">
+        <h1>Contratos Selecionados</h1>
+        <ul>
+            {% for contrato in contratos_selecionados %}
+            <li>
+                <strong>Nome:</strong> {{ contrato.nome }}<br>
+                <strong>Descrição:</strong> {{ contrato.descricao }}<br>
+                <strong>Início:</strong> {{ contrato.inicio.strftime("%Y-%m-%d %H:%M") }}<br>
+                <strong>Término:</strong> {{ contrato.termino.strftime("%Y-%m-%d %H:%M") }}<br>
+                <strong>Duração:</strong> {{ contrato.duracao }} horas
+            </li>
+            {% endfor %}
+        </ul>
+
+        <div class="back-button">
+            <a href="/">Voltar</a>
+        </div>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('background-music');
+            var video = document.getElementById('video-background');
+            if (audio.paused) {
+                audio.play();
+            }
+            if (video.paused) {
+                video.play();
+            }
+
+            // Reduzindo o volume da música para 0.5 (50%)
+            audio.volume = 0.5;
+        });
+    </script>
 </body>
 
 </html>
