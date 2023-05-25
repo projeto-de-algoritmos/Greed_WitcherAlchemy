@@ -4,13 +4,6 @@
     /* adicione outros formatos de fonte aqui, se necessário */
 }
 
-body {
-    font-family: 'thewitcher', sans-serif;
-    color: white;
-    margin: 0;
-    padding: 0;
-}
-
 #video-background {
     position: fixed;
     top: 0;
@@ -21,10 +14,38 @@ body {
     z-index: -1;
 }
 
+body {
+    display: flex;
+    font-family: 'thewitcher', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
 .content {
     position: relative;
     z-index: 1;
     padding: 20px;
+}
+
+.ingredientes {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.column {
+    flex-basis: 45%;
+    /* Ajuste o valor conforme necessário */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 20px;
 }
 
 h1 {

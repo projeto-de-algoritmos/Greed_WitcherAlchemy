@@ -3,6 +3,7 @@
 
 <head>
     <title>Cadastro de Contratos</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
     <style>
         @font-face {
             font-family: 'thewitcher';
@@ -34,26 +35,40 @@
         }
 
         button {
-            background-color: red; /* Cor de fundo vermelha do botão */
-            border: none; /* Remove a borda */
-            color: white; /* Cor do texto */
-            padding: 10px 20px; /* Espaçamento interno */
-            text-align: center; /* Alinhamento do texto */
-            text-decoration: none; /* Remove a decoração de link */
-            display: inline-block; /* Permite ajustar a largura do botão */
-            font-size: 16px; /* Tamanho da fonte */
-            margin-top: 10px; /* Espaçamento superior */
-            cursor: pointer; /* Cursor ao passar o mouse */
-            font-family: 'thewitcher'; /* Usa a mesma fonte do texto */
-            border-radius: 20px; /* Remove o arredondamento dos cantos */
+            background-color: red;
+            /* Cor de fundo vermelha do botão */
+            border: none;
+            /* Remove a borda */
+            color: white;
+            /* Cor do texto */
+            padding: 10px 20px;
+            /* Espaçamento interno */
+            text-align: center;
+            /* Alinhamento do texto */
+            text-decoration: none;
+            /* Remove a decoração de link */
+            display: inline-block;
+            /* Permite ajustar a largura do botão */
+            font-size: 16px;
+            /* Tamanho da fonte */
+            margin-top: 10px;
+            /* Espaçamento superior */
+            cursor: pointer;
+            /* Cursor ao passar o mouse */
+            font-family: 'thewitcher';
+            /* Usa a mesma fonte do texto */
+            border-radius: 20px;
+            /* Remove o arredondamento dos cantos */
         }
 
         button:hover {
-            background-color: #800000; /* Cor de fundo mais escura ao passar o mouse */
+            background-color: #800000;
+            /* Cor de fundo mais escura ao passar o mouse */
         }
 
         button:active {
-            background-color: #400000; /* Cor de fundo ainda mais escura ao clicar */
+            background-color: #400000;
+            /* Cor de fundo ainda mais escura ao clicar */
         }
     </style>
     <script>
@@ -102,10 +117,13 @@
 
             <button type="submit">Enviar</button>
         </form>
+        <div class="back-button">
+            <a href="/">Voltar</a>
+        </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             var audio = document.getElementById('background-music');
             var video = document.getElementById('video-background');
             if (audio.paused) {
@@ -122,4 +140,3 @@
 </body>
 
 </html>
-

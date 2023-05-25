@@ -33,6 +33,34 @@
         </div>
     </div>
 
+    <div class="ingredientes">
+        <h2>Ingredientes</h2>
+        <div class="column">
+            <ul>
+                {% for ingrediente in ingredientes[:5] %}
+                <li>
+                    <strong>Nome:</strong> {{ ingrediente.nome }}<br>
+                    <strong>Tamanho:</strong> {{ ingrediente.tamanho }}<br>
+                    <strong>Valor:</strong> {{ ingrediente.valor }}<br>
+                    <strong>Propriedades:</strong> {{ ingrediente.propriedades }}<br><br>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="column">
+            <ul>
+                {% for ingrediente in ingredientes[5:10] %}
+                <li>
+                    <strong>Nome:</strong> {{ ingrediente.nome }}<br>
+                    <strong>Tamanho:</strong> {{ ingrediente.tamanho }}<br>
+                    <strong>Valor:</strong> {{ ingrediente.valor }}<br>
+                    <strong>Propriedades:</strong> {{ ingrediente.propriedades }}<br><br>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var audio = document.getElementById('background-music');
