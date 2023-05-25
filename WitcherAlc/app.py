@@ -31,11 +31,11 @@ def knapsack():
         return render_template('resultado_knapsack.html', frascos=frascos, frascos_range=range(1, num_frascos + 1))
     return render_template('knapsack.html', ingredientes=ingredientes)
 
-contratos_ = []
-
 # Rota do Interval Scheduling (formulário de contratos), retorna o resultado
 @app.route('/contratos', methods=['GET', 'POST'])
 def contratos():
+    contratos_ = []
+    
     if request.method == 'POST':
         # Obter os dados do formulário
         num_contratos = int(request.form.get('num_contratos'))
