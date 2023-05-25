@@ -31,7 +31,7 @@ O projeto desenvolvido trata-se de uma aplicação Web inspirada no mundo da sé
 
 ## Vídeo
 
-- [youtube]()
+- [youtube](https://www.youtube.com/watch?v=dORHhd0DiGA)
 
 ## Instalação 
 **Linguagem**: Python<br>
