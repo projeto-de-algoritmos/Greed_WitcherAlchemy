@@ -13,8 +13,8 @@
 
 O projeto desenvolvido trata-se de uma aplicação Web inspirada no mundo da série de livros e jogos The Witcher. Há 2 vertentes nele:
 
-1. O primeiro utiliza o algoritmo ambicioso Knapsack para uma manipulação de frascos e ingredientes de poções, em que o usuário informa quantos frascos (e suas capacidades) e qual a prioridade dos ingredientes que ele deseja guardar nesses frascos. Assim, o algoritmo apresenta como ficaria a distribuição dos ingredientes para cada um dos frascos. É um exercício muito interessante, pois para quem é fã, sabe que Geralt e os Witchers sempre têm esse recursos de poções consigo para poder ter melhores características durante seus contratos!
-2. O segundo utiliza o algoritmo ambicioso Interval Scheduling para que Geralt possa saber a partir de seus vários contratos com horários de início, término e duração, como ele pode fazer o máximo possível e quantas moedas ele ganhará com isso (o algoritmo foca em máximo de tarefas e não valor).
+1. O primeiro utiliza o algoritmo ambicioso Knapsack para uma manipulação de frascos e ingredientes de poções, em que o usuário informa quantos frascos (e suas capacidades) e, baseado no valor e tamanho dos ingredientes, o algoritmo apresenta como ficaria a distribuição dos ingredientes para cada um dos frascos. É um exercício muito interessante, pois para quem é fã, sabe que Geralt e os Witchers sempre têm esse recursos de poções consigo para poder ter melhores características durante seus contratos!
+2. O segundo utiliza o algoritmo ambicioso Interval Scheduling para que Geralt possa saber a partir de seus vários contratos com horários de início, término e duração, como ele pode fazer o máximo de contratos possível.
 
 
 ## Screenshots
