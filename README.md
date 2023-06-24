@@ -33,6 +33,12 @@ O projeto desenvolvido trata-se de uma aplicação Web inspirada no mundo da sé
 
 - [youtube](https://www.youtube.com/watch?v=dORHhd0DiGA)
 
+
+
+https://github.com/projeto-de-algoritmos/Greed_WitcherAlchemy/assets/78980842/a5436d47-f0ea-43ce-bcf9-b826d5161293
+
+
+
 ## Instalação 
 **Linguagem**: Python<br>
 **Framework**: <br>
